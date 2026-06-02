@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
 import { teamMembers } from '@/data/menuData'
+import { withBasePath } from '@/lib/paths'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -24,7 +25,7 @@ export default function About() {
   return (
     <>
       <section className="relative pt-32 pb-20 bg-grove-green-dark grain-texture overflow-hidden">
-        <div className="absolute inset-0 opacity-10"><img src="/images/hero-bg.png" alt="" className="w-full h-full object-cover" /></div>
+        <div className="absolute inset-0 opacity-10"><img src={withBasePath('/images/hero-bg.png')} alt="" className="w-full h-full object-cover" /></div>
         <div className="absolute inset-0 bg-grove-green-dark/80" />
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-semibold tracking-[0.3em] uppercase text-grove-gold mb-3 block">Our Story</motion.span>
@@ -48,9 +49,9 @@ export default function About() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-xl"><img src="/images/about-interior.png" alt="Interior" className="w-full h-64 object-cover" /></div>
-              <div className="rounded-2xl overflow-hidden shadow-xl mt-8"><img src="/images/gallery-1.png" alt="Breakfast" className="w-full h-64 object-cover" /></div>
-              <div className="rounded-2xl overflow-hidden shadow-xl col-span-2"><img src="/images/gallery-3.png" alt="Sandwiches" className="w-full h-48 object-cover" /></div>
+              <div className="rounded-2xl overflow-hidden shadow-xl"><img src={withBasePath('/images/about-interior.png')} alt="Interior" className="w-full h-64 object-cover" /></div>
+              <div className="rounded-2xl overflow-hidden shadow-xl mt-8"><img src={withBasePath('/images/gallery-1.png')} alt="Breakfast" className="w-full h-64 object-cover" /></div>
+              <div className="rounded-2xl overflow-hidden shadow-xl col-span-2"><img src={withBasePath('/images/gallery-3.png')} alt="Sandwiches" className="w-full h-48 object-cover" /></div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-28 h-28 border-2 border-grove-gold/30 rounded-2xl -z-10 hidden lg:block" />
           </motion.div>
@@ -75,7 +76,7 @@ export default function About() {
       </section>
 
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
-        <img src="/images/about-interior.png" alt="Ambiance" className="w-full h-full object-cover" />
+        <img src={withBasePath('/images/about-interior.png')} alt="Ambiance" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-grove-green-dark/60 flex items-center justify-center">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="text-center px-4">
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-grove-white mb-4">Step Into <span className="text-grove-gold">Elegance</span></h2>

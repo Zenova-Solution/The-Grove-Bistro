@@ -7,6 +7,7 @@ import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
 import Lightbox from '@/components/Lightbox'
 import { categories, menuItems, testimonials, galleryImages } from '@/data/menuData'
+import { withBasePath } from '@/lib/paths'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -52,7 +53,7 @@ export default function Home() {
           className="absolute inset-0 -top-20"
         >
           <img
-            src="/images/hero-bg.png"
+            src={withBasePath('/images/hero-bg.png')}
             alt="The Grove Bistro interior"
             className="w-full h-[120%] object-cover"
           />
@@ -190,7 +191,7 @@ export default function Home() {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/about-interior.png"
+                  src={withBasePath('/images/about-interior.png')}
                   alt="The Grove Bistro elegant interior"
                   className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
@@ -397,7 +398,7 @@ export default function Home() {
 
       <section className="py-20 sm:py-28 bg-grove-green-dark relative overflow-hidden" id="cta-section">
         <div className="absolute inset-0 opacity-5">
-          <img src="/images/hero-bg.png" alt="" className="w-full h-full object-cover" />
+          <img src={withBasePath('/images/hero-bg.png')} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-grove-green-dark/90" />
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">

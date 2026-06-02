@@ -1,3 +1,5 @@
+import { withBasePath } from '@/lib/paths'
+
 export interface Category {
   id: string
   name: string
@@ -39,25 +41,25 @@ export const categories: Category[] = [
   {
     id: 'coffee',
     name: 'Coffee & Espresso',
-    image: '/images/coffee-category.png',
+    image: withBasePath('/images/coffee-category.png'),
     description: 'Handcrafted specialty brews',
   },
   {
     id: 'cold-drinks',
     name: 'Cold Drinks',
-    image: '/images/drinks-category.png',
+    image: withBasePath('/images/drinks-category.png'),
     description: 'Refreshing mocktails & smoothies',
   },
   {
     id: 'burgers',
     name: 'Burgers & Rolls',
-    image: '/images/burger-category.png',
+    image: withBasePath('/images/burger-category.png'),
     description: 'Artisan gourmet creations',
   },
   {
     id: 'shawarma',
     name: 'Shawarma & Wraps',
-    image: '/images/shawarma-category.png',
+    image: withBasePath('/images/shawarma-category.png'),
     description: 'Mediterranean flavors perfected',
   },
 ]
@@ -337,12 +339,12 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const galleryImages: GalleryImage[] = [
-  { id: 1, src: '/images/gallery-1.png', alt: 'Elegant breakfast spread with cappuccino and pastries' },
-  { id: 2, src: '/images/gallery-2.png', alt: 'Perfect espresso being crafted' },
-  { id: 3, src: '/images/gallery-3.png', alt: 'Artisan sandwich platter' },
-  { id: 4, src: '/images/gallery-4.png', alt: 'Tropical mocktail with fresh fruit garnish' },
-  { id: 5, src: '/images/gallery-5.png', alt: 'Gourmet shawarma platter' },
-  { id: 6, src: '/images/gallery-6.png', alt: 'Artisan chocolate dessert with gold leaf' },
+  { id: 1, src: withBasePath('/images/gallery-1.png'), alt: 'Elegant breakfast spread with cappuccino and pastries' },
+  { id: 2, src: withBasePath('/images/gallery-2.png'), alt: 'Perfect espresso being crafted' },
+  { id: 3, src: withBasePath('/images/gallery-3.png'), alt: 'Artisan sandwich platter' },
+  { id: 4, src: withBasePath('/images/gallery-4.png'), alt: 'Tropical mocktail with fresh fruit garnish' },
+  { id: 5, src: withBasePath('/images/gallery-5.png'), alt: 'Gourmet shawarma platter' },
+  { id: 6, src: withBasePath('/images/gallery-6.png'), alt: 'Artisan chocolate dessert with gold leaf' },
 ]
 
 export const teamMembers: TeamMember[] = [
