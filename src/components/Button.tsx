@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import type { ReactNode, MouseEvent } from 'react'
 
 interface ButtonProps {
@@ -47,16 +48,22 @@ export default function Button({
   if (href) {
     return (
       <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-        <a
-          href={href}
-          target={href.startsWith('http') ? '_blank' : undefined}
-          rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className={classes}
-          onClick={onClick}
-          {...props}
-        >
-          {children}
-        </a>
+        {href.startsWith('http') ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes}
+            onClick={onClick}
+            {...props}
+          >
+            {children}
+          </a>
+        ) : (
+          <Link href={href} className={classes} onClick={onClick as never} {...props}>
+            {children}
+          </Link>
+        )}
       </motion.div>
     )
   }
